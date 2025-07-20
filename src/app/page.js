@@ -1,11 +1,14 @@
-
+import Carousel from "../../components/Carousel"
 
 export default function Home() {
 	return (
+
+    
     <div>
     <h1>TarotShare</h1>
-
+    <Carousel />
     <ul>
+      
     <li>The Different Pulls</li>
     {/* add card meaning
         have them be in 2 rows across the page
