@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { CarouselApi } from "@/components/ui/carousel";
 
 import {
@@ -11,26 +11,26 @@ import {
 import { useEffect, useState } from "react";
 
 export default function CardCarousel(cards) {
-    const [api, setApi] = useState()
-    const [current, setCurrent] = useState(0)
-    const [count, setCount] = useState(0)
+	const [api, setApi] = useState();
+	const [current, setCurrent] = useState(0);
+	const [count, setCount] = useState(0);
 
-    useEffect(() => {
-        if (!api) {
-          return
-        }
-     
-        setCount(api.scrollSnapList().length)
-        setCurrent(api.selectedScrollSnap() + 1)
-     
-        api.on("select", () => {
-          setCurrent(api.selectedScrollSnap() + 1)
-        })
-      }, [api])
+	useEffect(() => {
+		if (!api) {
+			return;
+		}
+
+		setCount(api.scrollSnapList().length);
+		setCurrent(api.selectedScrollSnap() + 1);
+
+		api.on("select", () => {
+			setCurrent(api.selectedScrollSnap() + 1);
+		});
+	}, [api]);
 
 	return (
 		<Carousel setApi={setApi}>
-			<div>
+			<div className="flex justify-center gap-4 mt-4">
 				<CarouselContent>
 					<CarouselItem>Daily Pull</CarouselItem>
 					<CarouselItem>Yes/No</CarouselItem>
